@@ -8,7 +8,7 @@ Frontend feito inspirado no feed de postagens do Facebook, se utilizando das seg
 * Webpack
 * Yarn
 
-# Instalação e utilização
+# Instalação
 
 Para testar o código, basta seguir as instruções abaixo:
 
