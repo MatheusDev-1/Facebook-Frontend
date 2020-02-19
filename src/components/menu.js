@@ -1,8 +1,7 @@
 import React from 'react';
 
 function Menu(){
-  return
-  (
+  return(
   <div className="menu">
     facebook
     <span id="menuMeuPerfil">Meu perfil</span>

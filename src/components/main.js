@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-class PostItem extends Component {
+import Post from './post'
+
+class Main extends Component{
   state = {
     posts: [
       {
@@ -65,76 +67,20 @@ class PostItem extends Component {
         ]
       },
 
-    ]
+    ] 
   }
 
   render(){
-    return (
-      <>
-      {this.state.posts.map(p => (
-       <div className="post">
-        <div className="postUser">
-          <div className="containerAvatar">
-            <img id="avatar" src={p.author.avatar}></img>
-          </div>
-          <div className="containerUser">
-            <span id='authorUser'>{p.author.name}</span>
-            <span id='date'>{p.date}</span>
-          </div>
-        </div>
-        
-        <div className="containerContent">
-          <span id="content">{p.text}</span>
-        </div>
+    const { posts } = this.state
 
-        <hr></hr>
-
-        {p.comentarios.map(c => (
-          <div className="comments">
-          <div id="userAvatarComment">
-            <img id ="commentAvatar" src={c.author.avatar}></img>
-          </div>
-
-          <div id="commentContainer">
-            <span id="authorCommentName">{c.author.name}</span>
-            <span id="commentContent">{c.text}</span>
-          </div>
-          </div>
-        ))}   
-     </div> 
-      ))}
-      </>
+    return(
+      <div className="panel">
+        {posts.map(dados => (
+          <Post key={dados.id} {... dados}/>
+          ))}
+      </div>
     )
   }
 }
 
-export default PostItem;
-
-// <div className="post">
-{/* <div className="postUser">
-<div id="containerAvatar">
-  <img id="avatar" src="https://ya-webdesign.com/images/avatar-png-1.png"></img>
-</div>
-<div className="containerUser">
-  <span id='authorUser'>Matheus Oliveira da Hora</span>
-  <span id='date'>17 Fev 2020</span>
-</div>
-</div>
-
-<div className="containerContent">
-<span id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</span>
-<p>PS: Se você não vai até o facebook, eu trago o facebook até você Rafaela</p>
-</div>
-
-
-<div className="comments">
-<div id="userAvatarComment">
-<img id ="commentAvatar" src="https://i.dlpng.com/static/png/6728143_thumb.png"></img>
-</div>
-<div id="commentContainer">
-  <span id="authorCommentName">Rafaela Sukiyama</span>
-  <span id="commentContent">Até aqui Matheus? Por que você não vai se fuder? emoteHate</span>
-</div>
-
-</div>
-</div> */}
+export default Main;

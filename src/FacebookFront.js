@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Menu from "./components/menu"
-import PostsPanel from './components/postsPanel'
+import Main from './components/main'
 
 function Facebook(){
   return (<>
           <Menu />
-          <PostsPanel />
+          <Main />
           </>
           )
 }
