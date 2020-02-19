@@ -1,13 +1,13 @@
 import React from 'react';
 
 function Menu(){
-  return(
+  return
+  (
   <div className="menu">
-    facebook.
+    facebook
     <span id="menuMeuPerfil">Meu perfil</span>
-   
   </div>
-        )
+  )
 }
 
 export default Menu;
